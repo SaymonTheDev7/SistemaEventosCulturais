@@ -5,7 +5,7 @@ public class Executavel {
     private static Scanner sc = new Scanner(System.in);
 
     public static void main(String[] args) {
-        inputDeleteParticipant();
+        BancoInscricao.salvarInscricao(inputSubscribe());
     }
 
     public static Evento inputSaveEvent () {
@@ -35,6 +35,22 @@ public class Executavel {
         String emailParticipante = sc.next();
 
         return new Participante(nomeParticipante, emailParticipante);
+
+    }
+
+    public static Inscricao inputSubscribe () {
+
+        System.out.println("Insira o nome do evento que deseja inscrever: ");
+        String nomeEvento = sc.next();
+
+        System.out.println("Insira o nome do participante que deseja inscrever: ");
+        String nomeParticipante = sc.next();
+
+        Evento evento = BancoEvento.buscarPorNome(nomeEvento);
+        Participante participante = BancoParticipante.buscarPorNome(nomeParticipante);
+
+        return new Inscricao(evento, participante);
+
 
     }
 

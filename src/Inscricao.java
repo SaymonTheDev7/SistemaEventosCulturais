@@ -1,13 +1,18 @@
 public class Inscricao {
 
     private int id;
-    private Evento eventoId;
-    private Participante participanteId;
+    private Evento evento;
+    private Participante participante;
 
     public Inscricao(int id, Evento eventoId, Participante participanteId) {
         this.id = id;
-        this.eventoId = eventoId;
-        this.participanteId = participanteId;
+        this.evento = eventoId;
+        this.participante = participanteId;
+    }
+
+    public Inscricao(Evento eventoId, Participante participanteId) {
+        this.evento = eventoId;
+        this.participante = participanteId;
     }
 
     public int getId() {
@@ -18,25 +23,25 @@ public class Inscricao {
         this.id = id;
     }
 
-    public Evento getEventoId() {
-        return eventoId;
+    public Evento getEvento() {
+        return evento;
     }
 
-    public void setEventoId(Evento eventoId) {
-        this.eventoId = eventoId;
+    public void setEvento(Evento evento) {
+        this.evento = evento;
     }
 
-    public Participante getParticipanteId() {
-        return participanteId;
+    public Participante getParticipante() {
+        return participante;
     }
 
-    public void setParticipanteId(Participante participanteId) {
-        this.participanteId = participanteId;
+    public void setParticipante(Participante participante) {
+        this.participante = participante;
     }
 
     public String toString () {
         return "\nID da inscrição: " + getId() +
-               "\nID do evento: " + getEventoId() +
-               "\nID do participante: " + getParticipanteId();
+               "\nID do evento: " + getEvento() +
+               "\nID do participante: " + getParticipante();
     }
 }
