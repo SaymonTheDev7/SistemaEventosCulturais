@@ -1,14 +1,66 @@
+import java.sql.SQLException;
 import java.util.Scanner;
 
 public class Executavel {
 
     private static Scanner sc = new Scanner(System.in);
 
-    public static void main(String[] args) {
-        BancoInscricao.salvarInscricao(inputSubscribe());
+    public static void main(String[] args) throws SQLException {
+
+        System.out.println("Bem vindo ao sistema de gerenciamento de eventos.");
+
+        int opcaoEscolha = 0;
+        while ( opcaoEscolha != 1) {
+
+            System.out.println("1. Login");
+            System.out.println("0. Logout");
+            opcaoEscolha = sc.nextInt();
+
+            if ( opcaoEscolha == 0 ) {
+                System.out.println("Sistema sendo finalizado.");
+                System.exit(0);
+            }
+
+            else {
+
+                String user = "Saymon";
+                String password = "@Saymon7";
+
+                System.out.println("Insira o login:");
+                user = sc.next();
+
+                System.out.println("Insira a senha do login:");
+                password = sc.next();
+
+
+                if ( !password.equals("@Saymon7")) {
+
+                    System.out.println("Senha incorreta, você tem mais 2 tentativas");
+
+                    System.out.println("Insira a senha do login:");
+                    password = sc.next();
+
+                    if ( !password.equals("@Saymon7")) {
+
+                        System.out.println("Senha incorreta, você tem mais 1 tentativa");
+
+                        System.out.println("Insira a senha do login:");
+                        password = sc.next();
+
+                        if ( !password.equals("@Saymon7")) {
+
+                            System.out.println("Sistema finalizado por segurança.");
+                            System.exit(0);
+                        }
+                    }
+                }
+
+                System.out.println();
+            }
+        }
     }
 
-    public static Evento inputSaveEvent () {
+   public static Evento inputSaveEvent () {
 
         System.out.println("Insira o nome do evento: ");
         String nomeEvento = sc.next();
