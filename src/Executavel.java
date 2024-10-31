@@ -64,8 +64,8 @@ public class Executavel {
                     System.out.println("4.Adicionar participante:");
                     System.out.println("5.Buscar participante por E-Mail:");
                     System.out.println("6.Remover participante:");
-                    System.out.println("7.Inscrever participante:");
-                    System.out.println("8.Remover participante:");
+                    System.out.println("7.Adicionar inscrição:");
+                    System.out.println("8.Remover inscrição:");
                     System.out.println("0.Logout:");
                     int escolhaMenuEscolhas = sc.nextInt();
 
@@ -90,7 +90,8 @@ public class Executavel {
 
                         case 2: {
 
-                            BancoEvento.buscarPorNome(searchEvent());
+                            System.out.println(BancoEvento.buscarPorNome(searchEvent()));
+                            System.out.println("\n");
 
                         }
 
@@ -116,7 +117,8 @@ public class Executavel {
 
                         case 5: {
 
-                            BancoParticipante.buscarPorNome(searchParticipant());
+                            System.out.println(BancoParticipante.buscarPorNome(searchParticipant()));
+                            System.out.println("\n");
 
                         }
 
@@ -192,7 +194,7 @@ public class Executavel {
         Participante participante = BancoParticipante.buscarPorNome(nomeParticipante);
 
         return new Inscricao(evento, participante);
-        
+
     }
 
     public static void inputDeleteEvent () {
