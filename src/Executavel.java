@@ -74,6 +74,7 @@ public class Executavel {
                         case 0: {
 
                             System.out.println("Obrigado, volte sempre!");
+                            System.exit(0);
 
                         }
 
