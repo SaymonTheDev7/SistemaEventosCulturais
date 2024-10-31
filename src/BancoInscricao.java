@@ -27,4 +27,17 @@ public class BancoInscricao {
         return inscricao;
 
     }
+
+    public static void deletarInscricao (int id) {
+
+        try (Connection connection = ConexaoBanco.getConnections()) {
+
+            PreparedStatement ps = connection.prepareStatement("DELETE FROM tb_inscricao WHERE id = ?");
+            ps.setInt(1, id);
+            ps.execute();
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        }
+    }
 }
