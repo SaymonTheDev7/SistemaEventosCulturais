@@ -41,7 +41,6 @@ public class Executavel {
                     password = sc.next();
 
                     if ( !password.equals("@Saymon7")) {
-
                         System.out.println("Senha incorreta, você tem mais 1 tentativa");
 
                         System.out.println("Insira a senha do login:");
@@ -51,6 +50,7 @@ public class Executavel {
 
                             System.out.println("Sistema finalizado por segurança.");
                             System.exit(0);
+
                         }
                     }
                 }

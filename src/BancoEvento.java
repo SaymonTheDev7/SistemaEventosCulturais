@@ -9,7 +9,7 @@ public class BancoEvento {
 
         try (Connection connection = ConexaoBanco.getConnections()) {
 
-            PreparedStatement ps = connection.prepareStatement("INSERT INTO tb_evento ( nome, local, data, descricao) VALUES " + "( ?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
+            PreparedStatement ps = connection.prepareStatement("INSERT INTO tb_evento ( nome, local, data, descricao) VALUES " + "(?, ?, ?, ?)", Statement.RETURN_GENERATED_KEYS);
             ps.setString(1, evento.getNome());
             ps.setString(2, evento.getLocal());
             ps.setString(3, evento.getData());
